@@ -1,0 +1,10 @@
+mod CLIMATE is
+sort weathercondition .
+op sunnyday : -> weathercondition .
+op rainyday : -> weathercondition .
+rl [raincloud] : sunnyday => rainyday .
+endm
+
+***(
+    rew [100] sunnyday .
+)***

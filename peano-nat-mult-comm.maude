@@ -1,0 +1,12 @@
+fmod PEANO-NAT-MULT is
+    protecting PEANO-NAT-EXTRA .
+    op _*_ : Nat Nat -> Nat [comm] .
+    vars M N : Nat .
+    eq N * 0 = 0 .
+    eq N * s(M) = N + (N * M) .
+endfm 
+
+***(
+    reduce s(s(s(0))) * s(s(s(s(s(0))))) .
+
+)***

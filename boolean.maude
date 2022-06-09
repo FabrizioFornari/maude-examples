@@ -1,0 +1,26 @@
+set include BOOL off .
+
+fmod BOOLEAN is
+   sort Bool .
+   op true : -> Bool .
+   op false : -> Bool .
+   op not_ : Bool -> Bool .
+   op _and_ : Bool Bool -> Bool .
+   op _or_ : Bool Bool -> Bool .
+   var A : Bool .
+   eq not true = false .
+   eq not false = true .
+   eq true and A = A .
+   eq false and A = false .
+   eq true or A = true .
+   eq false or A = A .
+endfm
+
+red true and not (false or not true) .
+***(
+reduce in BOOLEAN : true and not (false or not true) .
+rewrites: 4 in -10ms cpu (0ms real) (~ rewrites/second)
+result Bool: true
+)
+
+set include BOOL on .

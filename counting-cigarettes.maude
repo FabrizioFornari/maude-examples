@@ -1,0 +1,14 @@
+mod COUNTING-CIGARETTES is
+    protecting NAT .
+    sort State .
+    op c : Nat -> State [ctor] .
+    op b : Nat -> State [ctor] .
+    op __ : State State -> State [ctor assoc comm] . 
+    vars W X Y Z : Nat .		
+    rl [smoke] : c(X) => b(X + 1) .
+    rl [makenew] : b(W) b(X) b(Y) b(Z) => c(W + X + Y + Z) . 
+endm 
+
+***(
+    rew c(0) c(0) c(0) c(0) c(0) c(0) c(0) c(0) c(0) c(0) c(0) c(0) c(0) c(0) c(0) c(0) .
+)***

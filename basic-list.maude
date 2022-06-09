@@ -1,0 +1,8 @@
+fmod BASIC-LIST is
+sorts List Elt .
+subsort Elt < List .	
+op nil : -> List [ctor] .
+op __ : List List -> List [ctor] .     
+vars E1 E2 : Elt . 	
+vars L1 L2 : List .
+endfm 
